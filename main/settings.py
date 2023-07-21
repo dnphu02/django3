@@ -130,8 +130,13 @@ DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_U
 
 # Tự động cấu hình Whitenoise Middleware
 MIDDLEWARE = [
-    # ... các middleware khác ...
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 # Default primary key field type
